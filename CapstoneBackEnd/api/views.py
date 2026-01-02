@@ -5,6 +5,10 @@ from rest_framework.permissions import IsAuthenticated
 from .models import UPS, RepairAssignment, RepairUpdate
 from .serializers import UPSSerializer, RepairAssignmentSerializer, RepairUpdateSerializer
 from .permissions import IsManager
+from django.http import JsonResponse
+
+def home(request):
+    return JsonResponse({"message": "Backend is running!"})
 
 # List all UPS units (GET)
 class UPSListView(APIView):
